@@ -85,3 +85,65 @@ y = x - y; // y = 10
 x = x - y; // i.e 30 - 10 = 20 means x = 20 
 // so here bhi swap hogya
 console.log(x,y); //20, 10 aayega means swap hogya
+
+// operators in javascript
+//Note-  / always gives Quotient and % always gives Remainder
+let e = 7;
+let f = 2;
+console.log(e%f);// it will give Remainder 1
+console.log(Math.floor(e/f));// it will give 3 ye integer mein hii hoga because of math.floor it will give Quotient
+console.log(f%e);//so idhar 2 ko 7 ek baar bhi divide nhi karega iske liye sirf 2 hii aayega
+//note here f%e here f is divident and e is divisor agar divident choti hai divisor se toh calculate hii mat karo because jo aapka divident hai wohi appka answer hai
+console.log(Math.floor(f/e)); //answer o.567 aise aayega but because of math.floor 0 answer aayega
+
+//Now 
+let k = 4567; //so here we want 4+5+6+7 aise chaiye so k%10 se last value i.e 7 bahar aayega i.e jo bhi k mein last value rahega woh aayega using %
+// so agar 69%10 karenge toh answer 9 aayega agar 3456%100 karenge toh answer 56 aayega
+console.log(k%100);// answer 67 aayega 
+console.log(k%1000); //answer 567 aayega
+//Now k/10 karenge i.e divide karenge toh decimal i.e . lag jayega means 456.7 aayega
+console.log(k/10)//means agar divide kiya toh last digit chala jata hai decimal mein aur iss last digit ko math.floor se hata sakte hai
+console.log(Math.floor(k/10))//toh 4567 ye k/10 se 456.7 ban jayega and math.floor se ye 456 ban jayega means last digit 7 hatt jayega
+console.log(Math.floor(k/100))//so isse last k 2 digit hatt jayenge 4567 mein se aur 45 bachega
+
+//Relational operator > < <= >= != dekhenge
+//so Relational operator means kuch compare kar rhe hai hum
+console.log(10>=10)//toh greatar than equal to mein se ek condition means equal to true hogyi toh true aayega
+console.log(10>=7)//toh greatar than equal to mein se ek condition means greater than toh true hogyi toh true aayega
+console.log(10<=7)//so here dono condition false hai means less bhi nhi hai aur equal bhi nhi hai toh false aayega
+console.log(10 !== 11)//true aayega so ye strict equality hai i.e !== and != ye non strict equality hai
+/*
+Now difference between = == and ===
+so = is assignment operator ye value assign karne ka kaam karta hai means value dene ka kaam karta hai variable mein
+var a = 12; toh = ka kaam hai value assign karna means value set karna
+now
+ == ye check karta hai ki left and Right mein same value hai ya nhi for eg agar a == a hai toh answer aayega true because same value hai
+ but agar 12 == 13 karenge toh false aayega because == ye value check karta hai and 12 and 13 same value nhi hai isliye false
+ but problem of == is it gives true for this 12 == "12" because ye sirf value check karta hai isliye ye true dega
+ so == ye sirf value check karta hai but === ye value and dataType dono check karta hai isliye 12==="12" ye false dega
+ so humein === yahi jyada kar use karna hai
+ */
+
+ /**
+  * nOW WE WILL SEE THE LOGICAL OPERATOR && ||
+  * So logical operator wahan use karna hai jab humein multiple conditions check karni ho
+  * console.log(10>6 && 5<9) so & operator se agar ye dono condition true hai toh true milega
+  * console.log(10>6 || 15<9 || 18>9) so || operator k dono side true hoga phir bhi chalega and agar ek side true hoga phir bhi chalega
+  */
+
+ /*
+ unary operator
+ ++ is increment hota hai iske 2 variant hote hai i.e preIncrement and postIncrement
+ -- is decrement hota hai iske 2 variant hote hai i.e preDecrement and postDecrement
+  */
+ let i = 11;
+ i = i++ + ++i //means 11+13 = 24
+ console.log(i);//24 aayega
+ let j = true; //javascript mein true is 1 
+ j++;// javascript mein boolean value means true par yeh ++= operator chal sakta hai baki kisi languaagage mein ye nhi hota
+ console.log(j)// 2 aayega
+
+ /*now
+ let a = 11++;
+ console.log(a) error dega because hum ++ ye sidha value i.e 11++ par direct nhi laga sakte 
+ but variable a++ par laga sakre hai ye error nhi dega */
