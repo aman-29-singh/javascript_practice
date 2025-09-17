@@ -18,12 +18,12 @@ so we check NaN wit isNaN(ans) it gives true if ans is NaN
 // }else{
 //     console.log("you cannot vote ")
 // }
-if(isNaN(ans)){
+if (isNaN(ans)) {
     console.log("wrong Input")
 }
-else if(ans>=18){
+else if (ans >= 18) {
     console.log("you can vote")
-}else{
+} else {
     console.log("you cannot vote")
 }
 
@@ -56,16 +56,16 @@ if(amount>0 && amount<=5000){
 //now we will see the efficent technique to solve this questionsof range or discount problem
 let amount = Number(prompt("what is the final amount?"))
 let dis = 0;
-if(amount>0 && amount<=5000){
+if (amount > 0 && amount <= 5000) {
     dis = 0
-}else if(amount>5000 && amount<=7000){
+} else if (amount > 5000 && amount <= 7000) {
     dis = 5
-}else if(amount>7000 && amount<=9000){
+} else if (amount > 7000 && amount <= 9000) {
     dis = 10
-}else if(amount>9000){
+} else if (amount > 9000) {
     dis = 20
 }
-console.log(amount - Math.floor((dis*amount)/100))
+console.log(amount - Math.floor((dis * amount) / 100))
 
 //problem of unit to price
 /**
@@ -88,8 +88,8 @@ console.log(amount - Math.floor((dis*amount)/100))
  */
 let unit = Number(prompt("Enter electricity unit"))// assume user ne 700 diya
 let amount1 = 0;// ek amount1 naam ka variaable lelenge ismein hum apna amount stored kar lenge
-if(unit>400){
-    amount1 = (unit-400)*13//agar 700 unit hai toh idhar (700-400)*13 aayega aur amount1 mein store hoga
+if (unit > 400) {
+    amount1 = (unit - 400) * 13//agar 700 unit hai toh idhar (700-400)*13 aayega aur amount1 mein store hoga
     // abb agar upar 300 unit use ho chuki hai 700 mein se toh 700 mein se 400 unit bachi hai 
     // so ye bache hue 400 unit ko humein phir se Reassign karna padega unit mein 
     //so Reassign karne se i.e unit = 400 karne se unit mein 400 save kardo
@@ -102,16 +102,16 @@ so kyunki hum bottom to Top chal rhe toh bottom ki humne 400 wali check karli co
 hai ki 201-400 k bich mein ye condition so abb unit mein 400 se bacha hoga
 */
 // unit mein 400 bacha hoga i.e unit = 400
-if(unit>200 && unit<= 400){// so 200 se jyada aur 400 se kam kitni unit hai 400 mein se toh 200 unit hai aur ye 200 unit aayegi jab hum 400-200 karenge 
-    amount1 += (unit-200) * 8// i.e 1600 aayega amount1 mein i.e (400-200)*8  
+if (unit > 200 && unit <= 400) {// so 200 se jyada aur 400 se kam kitni unit hai 400 mein se toh 200 unit hai aur ye 200 unit aayegi jab hum 400-200 karenge 
+    amount1 += (unit - 200) * 8// i.e 1600 aayega amount1 mein i.e (400-200)*8  
     unit = 200 //ye 200 bache hai unit we will check condition (unit>100 && unit<= 200) in next if{}
 }
-if(unit>100 && unit<= 200){
+if (unit > 100 && unit <= 200) {
     //ye amount1 += ka matalb hai amount1 = amount1 + (unit-100)*6 so jao previous amount1 mein (unit-100)*6 ki value add kardenge
-    amount1 += (unit-100) * 6;//600 aayega i.e (200-100)*6
+    amount1 += (unit - 100) * 6;//600 aayega i.e (200-100)*6
     unit = 100
 }
-amount1 += unit*4;
+amount1 += unit * 4;
 console.log(amount1);
 
 //problem of INR Denominations
@@ -130,55 +130,147 @@ console.log(amount1);
  * phir ye 123/100 = 1 note banega 100 ka and 123%100 = 23 Rs bachega so ye progrmming se dekhenge
  */
 let amount2 = 4823;
-if(amount2>= 500){
-    console.log(amount2/500)//9.646 toh ye decimal mein nhi humein Integer mein chaiye so Math.floor use krenge
-    console.log("500 notes :"+ Math.floor(amount2/500))//so 9 aayega
-    amount2 = amount2%500 //323 bachega so amount2 mein 323 aayega aur yahi 323 niche k if mein jayega
+if (amount2 >= 500) {
+    console.log(amount2 / 500)//9.646 toh ye decimal mein nhi humein Integer mein chaiye so Math.floor use krenge
+    console.log("500 notes :" + Math.floor(amount2 / 500))//so 9 aayega
+    amount2 = amount2 % 500 //323 bachega so amount2 mein 323 aayega aur yahi 323 niche k if mein jayega
 }
 console.log(amount2);
 //200 k liye
-if(amount2>= 200){
+if (amount2 >= 200) {
     //console.log(amount2/200)//9.646 toh ye decimal mein nhi humein Integer mein chaiye so Math.floor use krenge
-    console.log("200 notes :"+ Math.floor(amount2/200))//so 9 aayega
-    amount2 = amount2%200 //123 bachega so amount2 mein 123 aayega aur yahi 123 niche k if mein jayega
+    console.log("200 notes :" + Math.floor(amount2 / 200))//so 9 aayega
+    amount2 = amount2 % 200 //123 bachega so amount2 mein 123 aayega aur yahi 123 niche k if mein jayega
 }
 //100 k liye
-if(amount2>= 100){
+if (amount2 >= 100) {
     //console.log(amount2/100)//9.646 toh ye decimal mein nhi humein Integer mein chaiye so Math.floor use krenge
-    console.log("100 notes :"+Math.floor(amount2/100))//so 9 aayega
-    amount2 = amount2%100 //23 bachega so amount2 mein 23 aayega aur yahi 23 niche k if mein jayega
+    console.log("100 notes :" + Math.floor(amount2 / 100))//so 9 aayega
+    amount2 = amount2 % 100 //23 bachega so amount2 mein 23 aayega aur yahi 23 niche k if mein jayega
 }
 //50 k liye
-if(amount2>= 50){
+if (amount2 >= 50) {
     //console.log(amount2/50)//9.646 toh ye decimal mein nhi humein Integer mein chaiye so Math.floor use krenge
-    console.log("50 notes :"+ Math.floor(amount2/50))//so 9 aayega
-    amount2 = amount2%50 //323 bachega so amount2 mein 323 aayega
+    console.log("50 notes :" + Math.floor(amount2 / 50))//so 9 aayega
+    amount2 = amount2 % 50 //323 bachega so amount2 mein 323 aayega
 }
 //20 k liye
-if(amount2>= 20){
+if (amount2 >= 20) {
     //console.log(amount2/20)//9.646 toh ye decimal mein nhi humein Integer mein chaiye so Math.floor use krenge
-    console.log("20 notes :"+ Math.floor(amount2/20))//so 9 aayega
-    amount2 = amount2%20 //323 bachega so amount2 mein 323 aayega
+    console.log("20 notes :" + Math.floor(amount2 / 20))//so 9 aayega
+    amount2 = amount2 % 20 //323 bachega so amount2 mein 323 aayega
 }
 // 10 k liye
-if(amount2>= 10){
+if (amount2 >= 10) {
     //console.log(amount2/10)//9.646 toh ye decimal mein nhi humein Integer mein chaiye so Math.floor use krenge
-    console.log("10 notes :"+ Math.floor(amount2/10))//so 9 aayega
-    amount2 = amount2%10 //323 bachega so amount2 mein 323 aayega 
+    console.log("10 notes :" + Math.floor(amount2 / 10))//so 9 aayega
+    amount2 = amount2 % 10 //323 bachega so amount2 mein 323 aayega 
 }
 // 5 k liye
-if(amount2>= 5){
+if (amount2 >= 5) {
     //console.log(amount2/5)//9.646 toh ye decimal mein nhi humein Integer mein chaiye so Math.floor use krenge
-    console.log("5 notes :"+ Math.floor(amount2/5))//so 9 aayega
-    amount2 = amount2%5 //323 bachega so amount2 mein 323 aayega
+    console.log("5 notes :" + Math.floor(amount2 / 5))//so 9 aayega
+    amount2 = amount2 % 5 //323 bachega so amount2 mein 323 aayega
 }
 // 2 k liye
-if(amount2>= 2){
+if (amount2 >= 2) {
     //console.log(amount2/2)//9.646 toh ye decimal mein nhi humein Integer mein chaiye so Math.floor use krenge
-    console.log("2 notes :"+ Math.floor(amount2/500))//so 9 aayega
-    amount2 = amount2%2 //323 bachega so amount2 mein 323 aayega
+    console.log("2 notes :" + Math.floor(amount2 / 500))//so 9 aayega
+    amount2 = amount2 % 2 //323 bachega so amount2 mein 323 aayega
 }
 //Now agar 1 Rs amount bacha hai toh hii ye chalega
-if( amount2 === 1 ){
+if (amount2 === 1) {
     console.log("1 notes :" + amount2)//1 Rs bacha hai tabhi ye chal rha hai
+}
+
+//ternary operator syntax is ternary operator ? :
+112 < 13 ? console.log("heyeheyeheye") : console.log('huhuhu')  //huhuhu aayega because condition is false
+console.log(122 > 13 ? "hello" : "hey") // hello aayega  because condition is true
+
+// Nested Ternary operator
+let num = 0;
+console.log(num > 0 ? "Postive" : num < 0 ? "Negative" : "zero");
+//agar num greater than 0 hai toh postive hai nhi toh phir ek aur ternary opertor mein jayega i.e nested ternary
+
+/*Now Switch cases toh Switch ek conditional statement hai jaise humare pass if{} conditional statement 
+hai waise hii switch conditional statement hai
+Now aisa kuch nhi hai ki jo Switch case kar sakta hai par if{}else{} nhi kar sakta so dono sab kuch kar sakte hai
+but bas thodi si chize change ho jayegi
+*/
+let day = 2;
+
+switch (day) {//here day is constant value means switch() idhar () bracket mein constant value dene ka
+    /**here case k aage jo 1 hai toh ye 1 ki value ko compare karenge day variable k andar k value se
+     * so agar day variable k andar ki value same hogi case k aage k value se like 1 toh woh wala case execute
+     * hoga 
+     */
+    case 1: console.log("monday");
+        break;//break se agar day 1 hoga toh sirf ye case chalega niche k case nhi chalenge kyunki ye break stop kar dega
+    // so agar ye break nhi hoga toh fall through condition hoga and niche k saare case execute ho jayenge
+
+    case 2: console.log("Tuesday");
+        //so ye Tuesday print hoga because day ki value 2 hai and case k aage 2 hai so ye wala case execute hoga
+        break;
+
+    default: console.log("Invalid");
+    //jab case k aage ki value and switch() k bracket () ki value same nhi hogi toh ye default chalega
+}
+/**Now question aata hai ki kab Switch() use karna chaiye aur kab if{}else{} condition use karna chaiye
+ * toh Switch kya bolta hai ki jab constant value match compare karani ho like day = 2  aur 
+ * day = "harsh" ko compare karenge case "harsh" se so here "harsh" is a constant value toh 
+ * humein exact match karana hai switch() k ()bracket k andar k variable k value ko -> case "value" k aage k value se
+ * so jo kuch bhi Switch kar sakta hai woh sab if{}else{} kar sakta hai lekin kuch aisi chize hai jo if{}else{} kar
+ * sakta hai par Switch() nhi kar sakta
+ * i.e Switch() mein bracket mein expression nhi de sakte i.e Switch(13>12) aisa nhi de sakte switch k () mein
+ * so Switch() here () bracket mein humesha constant value dene ka
+ */
+//Now we will see some variant
+/**so agar humein case 1 case 2 case 3 se agar humein ek hii statement execute karana hai  */
+let day1 = 5;
+switch (day1) {
+    case 1:
+    case 2:
+    case 3:
+        console.log("tuesday");
+        break
+    //so day1 variable k andar 1 2 ya 3 hoga toh sirf tuesday hii print hoga
+
+    case 4:
+    case 5:
+    case 6:
+        console.log("Wednesday");
+        break
+    //so day1 variable k andar 4 5 ya 6 hoga toh sirf wednesday hii print hoga
+    //so multiple condition par same Execution bhi ho sakta hai
+
+    default: console.log("Invalid")
+}
+
+//Now precision dekhenge another variant
+switch (true) {//so idhar switch() mein expression nhi likh sakte but case k aage toh expression likh sakte hai
+    case 19 > 6://so case k aage to expression likh sakte hai
+    console.log("hello")//ye pehle true mil gya toh ye print ho jayega pehle hello
+        break;
+
+    case 10 > 9:
+        console.log("hey");
+        break
+
+        //so yahan par both cases k condition true hai toh jo sabse pehle mila woh print hoga
+        //so idhar 
+
+    default: console.log("Invalid");
+}
+
+let sum = 0.1 + 0.3
+switch(sum){
+    case 0.3: console.log("aman");
+    break
+
+    case 0.1: console.log("ankush");
+    break
+
+    default: console.log("namaste");//so ye namaste print hoga because there is precision error 
+    //because sum ki value 0.435000 aaraha hai so its precision error solve it
+    //isse chatgpt se dekhenge solve karenge
 }
