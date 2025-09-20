@@ -276,3 +276,221 @@ for(var i = 1; i<20; i++){
     else console.log(i)
 }
 
+// we will see the while Loop so pattern of while Loop is->
+/**pattern of while Loop is->
+ * start;
+ * while( end ){
+ *  //code aayega
+ *  //change aayega
+ * }
+ */
+var i = 1 // start wala part hai
+while(i<23){
+    console.log(i); //so here 1 to 22 tak print hoga
+    i++; //change walaa part hai
+}
+//so matlaab jo kaam for loop karta hai woh same kaam while Loop bhi kar sakta hai
+/**toh ye for and while Loop mein farak kya hai jo kaam for kar rha hai wahi kaam while kar rha hai
+ * but kuch situation mein while Loop ka use jyada hota hai jaise maan lijiye mummy ne list banakar di 10 items
+ * ki aur boli ye 10 item aapko groceries shop se leke aani hai toh hum jayenge exact 10 item kharid lenge
+ * but agar ulte mein mummy ne 5000 Rs de k bole ki jab tak paise khatam nhi ho jate tab tak aapko shooping 
+ * karni hai toh jo pehle wala tha 10 item kharidna tha ye for Loop tha toh for Loop ye bolta hai ki agar
+ * humein iterations pata hai ki kitni baar chalna hai tab hum wahan for loop ka use karenge 
+ * aur jab muje pata hai ki ek condition k valid tak chalna hai Loop toh yahan hum while Loop ka use karenge
+ * 
+ */
+
+// var answer = prompt("kuch bhi dedo(exit for close)")
+//jab tak user exit nhi kar deta tab tak humein prompt karte rahna hai
+
+//muje chaiye ki jab tak user se exit naa ayye tab tak Loop chale toh iske use karenge while Loop
+//while(answer !== "exit"){// agar user ne input prompt mein "exit" type kiya toh while Loop nhi chalega
+  //  prompt("kuch bhi dedo(exit for close)")
+    //toh jab aisi situation ho jahan pe humein bas ye pata hai ki stop rukna kab hai toh while Loop ka use krenge
+//}
+//toh while Loop mein bas ye batao aap ki kab rukna hai
+//while Loop mein ye mat batao ki kahan se kahan tak chalna hai bas ye batao ki kab Rukna hai tab while Loop chalega
+//problem of sum of digit using while Loop
+//Note- kisi bhi number ko mod %10 karne par aakhiri digit milti hai like 234%10 = 4 i.e 4 mila mode %10 karne par
+//Note - aur agar kisi bhi number k aakhiri git ko decimal . mein lana hai so 3894/10 = 389.4 dega divide by 10 karne se
+//so agar 3894/10= 389.4 but aisa karenge Math.floor(3894/10) = 389 dega means 389.4 se .4 ye math.floor hata dega
+/*so har baar hum divide kare 10 se i.e /10 se aur math.floor mein daal de toh ek digit hatt jayegi 
+aur aakhiri digit nikalne ka tarika %10 hai
+*/
+//problem of sum of digit using while Loop
+// so 1234 inko add karna hai aur agar ispar %10 marenge toh last digit 4 mil jayega
+//so kyunki 1234 mein se first digit i.e 1 ko nikalna mushkil hai isliye hum last digit ko nikalenge i.e 4 ko using %10
+//i.e 1234%10 -> 4 and 123%10 -> 3 milega and 12%10 -> 2 and 1/10-> 0
+/**so
+ * 1234%10 -> 4
+ * 1234/10 -> 123%10 -> 3
+ * 123/10 -> 12%10 -> 2
+ * 12/10 -> 1%10 -> 1
+ * 1/10 ->
+ */
+//problem of sum of digit using while Loop
+ var pr = prompt("kaha tak sum of digit number  chaiye?")
+
+ if (pr === null) {
+     console.log("cancelled")
+ }
+ else {
+     var k = Number(pr)
+ 
+     if (isNaN(k)) {
+         console.log("Incvcalid")
+     }
+     else {
+         if (k > 0) {
+            var sum1 = 0;
+            while(k>0){
+                var rem = k%10;
+                sum1 = sum1 + rem
+                k = Math.floor(k/10);
+            }
+            console.log((sum1))
+             
+             
+         }
+         else {
+             console.log("should be +ve and more than 0")
+         }
+     }
+     // thoda error hai solve karna hai ismein
+ }
+
+ //problem of Reverse of Number
+ /**Logic iska aise bhi jata hai suppose we have to Reverse a 123 then
+  * 3*10 = 30-> 30+2 -> 32*10-> 320-> 320+1 = 321 diya so ye 123 ka Reverse hogya
+  */
+  var pr = prompt("kaha tak Reverse number   chaiye?")
+
+  if (pr === null) {
+      console.log("cancelled")
+  }
+  else {
+      var r = Number(pr)
+  
+      if (isNaN(r)) {
+          console.log("Incvcalid")
+      }
+      else {
+          if (r > 0) {//suppose p is 1234 hai
+            var rev = 0;
+            while(r>0){
+                var rem = r%10;// so rem mein 1234 ka sirf 4 aagya hoga because of %10
+                rev = rev*10 + rem; //yeh Reverse ki equation hoti hai isko ratt lo
+                r = Math.floor(r/10)//here 1234 se 123.4 hua phir math.floor ki wajah se 123 hua so p mein 123 hoga
+            }
+            console.log(rev)
+              
+          }
+          else {
+              console.log("should be +ve and more than 0")
+          }
+      }
+  }
+
+  //problem of strong number so strong number kya hai so suppose there is a number is 145
+  /*toh 145-> 1! + 4! + 5! toh 145 k teeno number k alag alag factorial ko add karke agar exact 145 aaya toh
+   strong number hai
+*/
+var pr = prompt("kaha tak strong number chaiye?")
+
+ if (pr === null) {
+     console.log("cancelled")
+ }
+ else {
+     var c = Number(pr)
+ 
+     if (isNaN(c)) {
+         console.log("Incvcalid")
+     }
+     else {
+         if (c > 0) {
+            var sum = 0;
+            var copy = c;
+            while(c>0){
+                var rem = c%10;
+                var fact = 1;
+                for(var i = 1; i<= rem; i++){
+                    fact = fact*i
+                }
+                sum = sum + fact;
+                c = Math.floor(c/10);
+            }
+            if(copy ===  sum){
+                console.log("strong")
+            }
+            else{
+                console.log("Not strong")
+            }
+            // console.log(sum)
+             
+         }
+         else {
+             console.log("should be +ve and more than 0")
+         }
+     }
+ }
+
+ //Now we will see the do while loop
+ /**pattern of writing do while->
+  * do{
+  * idhar andar jo aaye woh likh dijiye toh pehle ye code chal jayega means pehle do chal jayega
+  * without asking or checking any condition pehle do chal jayega
+  * console.log("hey") // ye atleast ek baar toh pakka chalega chaye condition kaisa bhi ho
+  * }
+  * while(12>13) abb ye condition agar sahi hoti toh "hey" baar baar print hota 
+  */
+ var i= 1;
+ do{
+    console.log("hey")//condition kuch bhi hoo ye atleasr ek baar toh print hoga
+    i++;
+ }
+ while(i<10);//abb kyunki condition Right hai toh "hey" 9 baar print hoga
+ /**so overall Loop 2 type k hote hai ek hota hai entry control Loop aur doosra hota hai Exit control Loop
+  * so Entry control loop hai for and while Loop so Entry control naam se samaj mein aaraha hai ki task
+  * execute karwane se pehle  aap pe control kara jaa raha hai condition puchi jaa rahi hai 
+  * aur ye do while Loop Exit control loop hai means jab aap ek baaar task karwa doge jab Nikalte waqt 
+  * aap se task ki condition puchi  means ye do mein task pehle kar deta hai phir check karta hai ki bhai
+  * sahi bhi tha ya nhi 
+  */
+ /**problems dekhenge-
+  * Repeat hello using do while loop -> ye khud se karne hai
+  * Guess the number-> so hum computer ko ek Range denge ki kis number se kis number k bich mein computer
+  * ek number pick kar lega khud se i.e computer kuch number khud se pick karega ek range of number k bich
+  * mein se aur humein i.e users ko ye Guess karna hai ki computer ne kaun sa number pick kiya hai
+  * abb agar users ne number kuch aisa guess kiya liya  jo ki computer k pick up number se chota hai
+  * i.e small hai toh computer bolega too Low try again and agar high choose karenge toh computer bolega
+  * too high try again
+  */
+ //let random = Math.random()*100 //isse 0 and 100 nhi aayega means range is between 1 t0 9
+ //but humein 0 and 100 bhi chaiye isliye Math.random()*100 + 1 aisa karenge
+ //let random = Math.random()*100+1   //toh abb range is 0 to 100 but ismein decimal mein aayega 
+//toh Decimal mein na aaye isliye we will us Math.floor
+let random = Math.floor(Math.random()*100+1)
+//console.log(random);// so ye ek baar mein jo computer hai ye ek Random number de dega humein 1 se 100 k range mein
+//abb muje user ko guess karna hai woh number 
+let guess = -1//ye just initialise karne k liye actual mein guess number hum Users se while loop k andar lenge
+//so hum while loop isliye lenge because muje ye pata nhi hai ki ye kab tak barabar hone wala hai
+while(guess !== random){//means jaise ye guess == random hogya waise hii ye loop stop ho jayega 
+    /**guess is jo number user guess karega and random means jo number computer pick karega
+     * to hum jo value lenge user se woh ye loop k andar lenge so let guess = 0 ye toh bas initialise karne
+     * k liye hai toh loop k andar user se value lenge abb loop k andar value isliye lenge because  baar baar
+     * value leni hai humein user se
+     */
+    guess = Number(prompt("Guess the number"))
+    if(isNaN(guess) || guess<1 || guess>100){//ye teeno mein se user ne kuch bhi input diya so try again
+        console.log("try again between 1 se 100");
+        continue//ye jaruri hai
+    }
+    if(guess> random){//means User ne computer k pick kiye number se high number guess karliya
+       console.log("too high , try again")
+    }else if(guess < random){
+        console.log("too low , try again")
+    }else{
+        console.log("Congrats and number was ", guess)
+    }
+}
+//problem dekhenge sasta calculator khud se

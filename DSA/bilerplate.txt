@@ -1,0 +1,21 @@
+var pr = prompt("kaha tak prime  chaiye?")
+
+ if (pr === null) {
+     console.log("cancelled")
+ }
+ else {
+     var p = Number(pr)
+ 
+     if (isNaN(p)) {
+         console.log("Incvcalid")
+     }
+     else {
+         if (p > 0) {
+             
+             
+         }
+         else {
+             console.log("should be +ve and more than 0")
+         }
+     }
+ }
